@@ -1,7 +1,7 @@
 package se.abalon.cache.loader;
 
 
-import se.abalon.cache.CacheIdentifier;
+import se.abalon.cache.threading.CacheIdentifier;
 
 /**
  *

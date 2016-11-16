@@ -1,8 +1,5 @@
 package se.abalon.cache.loader;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.jdo.PersistenceManager;
 
@@ -12,7 +9,7 @@ import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
 import net.sf.ehcache.ObjectExistsException;
 import net.sf.ehcache.config.CacheConfiguration;
-import se.abalon.bof.cache.threading.PutInCacheRunnable;
+import se.abalon.cache.threading.*;
 
 /**
  * The Cacher grants access to all available caches, enabling adding new caches and putting and receiving entries from the available caches. The Cacher ensures that synchronization is properly used when accessing the caches.

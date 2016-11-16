@@ -3,9 +3,6 @@ package se.abalon.cache.loader;
 import java.util.HashMap;
 import java.util.Map;
 
-import se.abalon.cache.loader.WorkPlaceCacheLoader;
-import se.abalon.bof.cache.MayflowerCacher;
-
 /**
  * The MainCacheLoader invokes the load method on all other implementations of CacheLoader.
  *
