@@ -1,4 +1,4 @@
-package com.abalon.cache;
+package se.abalon.cache;
 
 
 import javax.sql.DataSource;

@@ -1,4 +1,4 @@
-package com.abalon.cache;
+package se.abalon.cache;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

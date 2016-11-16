@@ -1,4 +1,4 @@
-package com.abalon.cache;
+package se.abalon.cache;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
