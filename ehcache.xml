@@ -1,0 +1,27 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+        updateCheck="false"
+        maxBytesLocalOffHeap="12G">
+    <defaultCache
+            maxElementsInMemory="0"
+            maxEntriesLocalHeap="1000"
+            overflowToDisk="false"
+            eternal="true"
+            timeToIdleSeconds="0"
+            timeToLiveSeconds="0"
+            memoryStoreEvictionPolicy="FIFO"
+            overflowToOffHeap="true">
+        <persistence strategy="none"/>
+        </defaultCache>
+
+        <cache name="persistenceManagerCache"
+            maxElementsInMemory="0"
+            maxEntriesLocalHeap="0"
+            overflowToDisk="false"
+            eternal="true"
+            timeToIdleSeconds="0"
+            timeToLiveSeconds="0"
+            memoryStoreEvictionPolicy="FIFO"
+            overflowToOffHeap="false">
+        <persistence strategy="none"/>
+        </cache>
+</ehcache>

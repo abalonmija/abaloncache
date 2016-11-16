@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
+
+    <!-- Initialization for data source -->
+    <bean id="rema_dev"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <property name="url" value="jdbc:sqlserver://testdb-03:1433;databaseName=rema_dev"/>
+        <property name="username" value="rema_dev"/>
+        <property name="password" value="rema_dev"/>
+    </bean>
+
+    <!-- Definition for CacheTemplate bean -->
+    <bean id="abalonCacheTemplate"
+          class="com.abalon.cache.AbalonCacheTemplate">
+        <property name="dataSource"  ref="rema_dev" />
+    </bean>
+
+</beans>
