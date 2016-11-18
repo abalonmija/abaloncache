@@ -5,8 +5,7 @@
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
 
     <!-- Initialization for data source -->
-    <bean id="rema_dev"
-          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="rema_dev" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
         <property name="url" value="jdbc:sqlserver://testdb-03:1433;databaseName=rema_dev"/>
         <property name="username" value="rema_dev"/>
@@ -14,9 +13,9 @@
     </bean>
 
     <!-- Definition for CacheTemplate bean -->
-    <bean id="abalonCacheTemplate"
-          class="com.abalon.cache.AbalonCacheTemplate">
+<!--    <bean id="abalonCacheTemplate"
+          class="se.abalon.cache.AbalonCacheTemplate">
         <property name="dataSource"  ref="rema_dev" />
     </bean>
-
+-->
 </beans>
