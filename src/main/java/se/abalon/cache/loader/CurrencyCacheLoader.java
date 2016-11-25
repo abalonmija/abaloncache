@@ -5,7 +5,7 @@ import se.abalon.cache.type.AbalonPrimaryKey;
 
 import java.util.HashMap;
 
-public class CurrencyCacheLoader extends AbstractCacheLoader {
+public class CurrencyCacheLoader{// extends AbstractCacheLoader {
 
 	private static MayflowerCacher cacher;
 
@@ -14,16 +14,17 @@ public class CurrencyCacheLoader extends AbstractCacheLoader {
 	}
 
 	public void load() throws Exception {
-		setLoaded(false);
+		/*setLoaded(false);
 		try {
 			addCurrencyCaches();
 		} catch (Exception e) {
 			throw e;
 		}
-		setLoaded(true);
+		setLoaded(true);*/
 	}
-
+/*
 	private static void addCurrencyCaches() {
+
 		BofPersistenceManager manager = null;
 		try {
 			KeyToValueEntityCacheIdentifier pkCodeCacheIdentifier = new KeyToValueEntityCacheIdentifier("Currency", "ID", "Currency", "CODE");
@@ -63,41 +64,5 @@ public class CurrencyCacheLoader extends AbstractCacheLoader {
 		}
 
 	}
-
-	// public static void addCurrencyMemberAccountCache(BofPersistenceManager manager) throws SQLException, ModelException {
-	//
-	// KeyToValueEntityCacheIdentifier pkCurrencyPkCacheIdentifier = new KeyToValueEntityCacheIdentifier("Currency", "ID", "MemberAccount", "ID");
-	// cacher.createCache(pkCurrencyPkCacheIdentifier);
-	//
-	// StringBuffer sql = new StringBuffer();
-	// SqlServerUtil sqlUtil;
-	// sql.append("SELECT ma.currency AS currencyPk, ma.id AS pk");
-	// sql.append(" FROM member_account ma WITH (NOLOCK)");
-	// sql.append(" WHERE ma.currency IS NOT NULL");
-	// sqlUtil = new SqlServerUtil(manager, sql.toString(), new String[] { "currencyPk", "pk" });
-	// sqlUtil.execute();
-	// HashMap<String, Object> result;
-	// AbalonPrimaryKey accountPk;
-	// AbalonPrimaryKey currencyPk;
-	// Map<AbalonPrimaryKey, List<AbalonPrimaryKey>> currencyAndAccounts = new HashMap<AbalonPrimaryKey, List<AbalonPrimaryKey>>();
-	// while ((result = (HashMap) sqlUtil.next()) != null) {
-	// accountPk = new AbalonPrimaryKey(result.get("pk").toString());
-	// currencyPk = new AbalonPrimaryKey(result.get("currencyPk").toString());
-	// if (currencyAndAccounts.containsKey(currencyPk)) {
-	// currencyAndAccounts.get(currencyPk).add(accountPk);
-	// } else {
-	// List<AbalonPrimaryKey> accountList = new ArrayList<AbalonPrimaryKey>();
-	// accountList.add(accountPk);
-	// currencyAndAccounts.put(currencyPk, accountList);
-	// }
-	//
-	// }
-	//
-	// sqlUtil.close();
-	//
-	// for (AbalonPrimaryKey thisCurrencyPk : currencyAndAccounts.keySet()) {
-	// cacher.putKeyToValue(pkCurrencyPkCacheIdentifier, thisCurrencyPk, currencyAndAccounts.get(thisCurrencyPk));
-	// }
-	// }
-
+*/
 }

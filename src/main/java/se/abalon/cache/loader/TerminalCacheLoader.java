@@ -5,7 +5,7 @@ import se.abalon.cache.type.AbalonPrimaryKey;
 
 import java.util.HashMap;
 
-public class TerminalCacheLoader extends AbstractCacheLoader {
+public class TerminalCacheLoader {//extends AbstractCacheLoader {
 
 	private static MayflowerCacher cacher;
 
@@ -14,7 +14,7 @@ public class TerminalCacheLoader extends AbstractCacheLoader {
 	}
 
 	public void load() throws Exception {
-		setLoaded(false);
+		/*setLoaded(false);
 		try {
 			addNumberPkToCache();
 			addPkNumberToCache();
@@ -22,9 +22,9 @@ public class TerminalCacheLoader extends AbstractCacheLoader {
 			throw e;
 		}
 		setLoaded(true);
-
+*/
 	}
-
+/*
 	private static void addNumberPkToCache() {
 		// String keyModelName = "Terminal";
 		// String keyFieldName = "TERMINAL_NUMBER";
@@ -123,5 +123,5 @@ public class TerminalCacheLoader extends AbstractCacheLoader {
 		}
 
 	}
-
+*/
 }

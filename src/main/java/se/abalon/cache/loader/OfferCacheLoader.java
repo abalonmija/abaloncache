@@ -3,7 +3,7 @@ import se.abalon.cache.threading.KeyToValueEntityCacheIdentifier;
 
 import java.util.*;
 
-public class OfferCacheLoader extends AbstractCacheLoader {
+public class OfferCacheLoader {//extends AbstractCacheLoader {
 
     private static MayflowerCacher cacher;
     private static KeyToValueEntityCacheIdentifier offerPkMemberAccountPkIdentifier = new KeyToValueEntityCacheIdentifier("Offer", "ID", "MemberAccount", "ID");
@@ -19,7 +19,7 @@ public class OfferCacheLoader extends AbstractCacheLoader {
 
 
     public void load() throws Exception {
-        setLoaded(false);
+/*        setLoaded(false);
         try {
             try {
                 loadOffersCache();
@@ -30,9 +30,9 @@ public class OfferCacheLoader extends AbstractCacheLoader {
             throw e;
         }
         setLoaded(true);
-
+*/
     }
-
+/*
     public void updateCacheForOfferAndMemberAccount(Integer offerId, Integer memberAccountId) throws Exception {
         loadOffersCache(offerId, memberAccountId);
     }
@@ -98,10 +98,6 @@ public class OfferCacheLoader extends AbstractCacheLoader {
         try {
             manager = BofPersistenceManagerFactory.create();
 
-            /*
-             * First find valid offers based on offer start/stop dates, then based on OfferValidity.
-             * If conditionOfferPk is null, all valid offers will be fetched, otherwise just that one
-             */
 
             // Alla publicerade erbjudanden
             // - Med individuell giltihet
@@ -128,5 +124,5 @@ public class OfferCacheLoader extends AbstractCacheLoader {
     private void loadOffersCache() {
         loadOffersCache(null, null);
     }
-
+*/
 }

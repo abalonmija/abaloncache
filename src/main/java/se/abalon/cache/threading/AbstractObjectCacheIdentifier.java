@@ -1,7 +1,5 @@
 package se.abalon.cache.threading;
 
-import se.abalon.cache.ObjectCacheIdentifier;
-
 /**
  * Abstract class containing the common methods for an ObjectCacheIdentifier.
  *

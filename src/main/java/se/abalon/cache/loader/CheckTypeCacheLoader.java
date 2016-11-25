@@ -6,12 +6,12 @@ import se.abalon.cache.type.AbalonPrimaryKey;
 import java.sql.SQLException;
 import java.util.HashMap;
 
-public class CheckTypeCacheLoader extends AbstractCacheLoader {
+public class CheckTypeCacheLoader {//extends AbstractCacheLoader {
 
 	private static MayflowerCacher cacher;
 	private static KeyToValueEntityCacheIdentifier checkTypePkModelCacheIdentifier = new KeyToValueEntityCacheIdentifier("CheckType", "ID", "CheckType", "Json");
 
-	
+	/*
 	public CheckTypeCacheLoader() throws Exception {
 		cacher = MayflowerCacher.getMayflowerCacher();
 		createCache();
@@ -81,4 +81,5 @@ public class CheckTypeCacheLoader extends AbstractCacheLoader {
 	private static void createCache() {
 		cacher.createLimitedCache(checkTypePkModelCacheIdentifier, 5);
 	}
+	*/
 }

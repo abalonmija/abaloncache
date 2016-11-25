@@ -6,7 +6,7 @@ import se.abalon.cache.type.AbalonPrimaryKey;
 
 import java.util.HashMap;
 
-public class MobileNumberCacheLoader extends AbstractCacheLoader {
+public class MobileNumberCacheLoader {//extends AbstractCacheLoader {
 
 	private static MayflowerCacher cacher;
 
@@ -15,7 +15,7 @@ public class MobileNumberCacheLoader extends AbstractCacheLoader {
 	}
 
 	public void load() throws Exception {
-		setLoaded(false);
+	/*	setLoaded(false);
 		try {
 			if (((String) getConfigurations().lookup("se.abalon.mfservice.MemberUtil.useMobileAsMemberId")).equalsIgnoreCase("true")) {
 				addToCache();
@@ -23,9 +23,9 @@ public class MobileNumberCacheLoader extends AbstractCacheLoader {
 		} catch (Exception e) {
 			throw e;
 		}
-		setLoaded(true);
+		setLoaded(true);*/
 	}
-
+/*
 	private static void addToCache() {
 		BofPersistenceManager manager = null;
 		try {
@@ -64,11 +64,6 @@ public class MobileNumberCacheLoader extends AbstractCacheLoader {
 
 	}
 
-	/**
-	 * Resources used by this class.
-	 * 
-	 * @return The ResourceMap for this class.
-	 */
 	public static ResourceMap getConfigurations() {
 		ResourceMap map = new ResourceMap();
 
@@ -76,5 +71,5 @@ public class MobileNumberCacheLoader extends AbstractCacheLoader {
 		return map;
 
 	}
-
+*/
 }

@@ -2,7 +2,7 @@ package se.abalon.cache.loader;
 
 import se.abalon.cache.threading.KeyEntityCacheIdentifier;
 
-public class PersonCacheLoader extends AbstractCacheLoader {
+public class PersonCacheLoader {//extends AbstractCacheLoader {
 
     private static MayflowerCacher cacher;
 
@@ -11,14 +11,14 @@ public class PersonCacheLoader extends AbstractCacheLoader {
     }
 
     public void load() throws Exception {
-        setLoaded(false);
+       /* setLoaded(false);
         try {
             createEmptyOrgnrPkToLimitedCache();
         } catch (Exception e) {
             throw e;
         }
         setLoaded(true);
-
+*/
     }
 
     private static void createEmptyOrgnrPkToLimitedCache() {

@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.abalon.cache</groupId>
+	<groupId>se.abalon.cache</groupId>
 	<artifactId>abaloncache</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -47,6 +47,21 @@
 			<groupId>org.springframework.restdocs</groupId>
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-ee</artifactId>
+			<version>2.10.1.2.14</version>
+		</dependency>
+		<dependency>
+			<groupId>jdo</groupId>
+			<artifactId>jdo</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>microsoft</groupId>
+			<artifactId>sqljdbc</artifactId>
+			<version>1.2-fixed</version>
 		</dependency>
 	</dependencies>
 

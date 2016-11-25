@@ -22,7 +22,7 @@ public class MainCacheLoader {
 
     private static void listCacheLoaders() {
         classes.clear();
-        classes.put(CountryCacheLoader.class.getName(), false);
+      /*  classes.put(CountryCacheLoader.class.getName(), false);
         classes.put(CurrencyCacheLoader.class.getName(), false);
         classes.put(CurrencyPeriodCacheLoader.class.getName(), false);
         classes.put(EmailCacheLoader.class.getName(), false);
@@ -37,11 +37,11 @@ public class MainCacheLoader {
         classes.put(ProductCategoryCacheLoader.class.getName(), false);
         classes.put(ProductGroupCacheLoader.class.getName(), false);
         classes.put(ProductMainGroupCacheLoader.class.getName(), false);
-        classes.put(TerminalCacheLoader.class.getName(), false);
+        classes.put(TerminalCacheLoader.class.getName(), false);*/
         classes.put(WorkPlaceCacheLoader.class.getName(), false);
-        classes.put(DecidasCacheLoader.class.getName(), false);
+    /*    classes.put(DecidasCacheLoader.class.getName(), false);
         classes.put(OfferUsageCacheLoader.class.getName(), false);
-        classes.put(CommunicationMonitorCacheLoader.class.getName(), false);
+        classes.put(CommunicationMonitorCacheLoader.class.getName(), false);*/
         System.out.println("::MAYFLOWER CACHE:: The following CacheLoaders will be executed by the MainCacheLoader:");
         for (String cacheLoaderName : classes.keySet()) {
             System.out.println("::MAYFLOWER CACHE:: " + cacheLoaderName);

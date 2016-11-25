@@ -1,21 +1,29 @@
 package se.abalon.cache.loader;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import se.abalon.cache.AbalonCacheApplication;
+import se.abalon.cache.AbalonCacheTemplate;
+import se.abalon.cache.dao.WorkPlaceDAO;
+
+import java.util.List;
 
 import se.abalon.cache.threading.KeyToValueEntityCacheIdentifier;
-import se.abalon.cache.type.AbalonPrimaryKey;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class WorkPlaceCacheLoader extends AbstractCacheLoader {
 
 	private static MayflowerCacher cacher;
+
+	@Autowired
+	private AbalonCacheTemplate abalonCacheTemplate;
 
 	public WorkPlaceCacheLoader() throws Exception {
 		cacher = MayflowerCacher.getMayflowerCacher();
 	}
 
 	public void load() throws Exception {
-		setLoaded(false);
+		//setLoaded(false);
 		try {
 			addWorkPlaceCaches();
 			// addNumberPkToCache();
@@ -23,48 +31,43 @@ public class WorkPlaceCacheLoader extends AbstractCacheLoader {
 		} catch (Exception e) {
 			throw e;
 		}
-		setLoaded(true);
+//		setLoaded(true);
 
 	}
 
-	private static void addWorkPlaceCaches() {
-		BofPersistenceManager manager = null;
+	private  void addWorkPlaceCaches() {
 		try {
-			// BofPersistenceManager manager = (BofPersistenceManager) BofPersistenceManagerFactory.create();
-			// BofQuery q = (BofQuery) manager.newQuery();
-			// q.addModel(keyModelName, "m");
-			// q.addField("m", keyFieldName);
-			// q.addField("m", valueFieldName);
-			// Collection<WorkPlace> workPlaces= (Collection<WorkPlace>) q.execute();
 			KeyToValueEntityCacheIdentifier pkNumberCacheIdentifier = new KeyToValueEntityCacheIdentifier("WorkPlace", "ID", "WorkPlace", "NUMBER");
 			KeyToValueEntityCacheIdentifier numberPkCacheIdentifier = new KeyToValueEntityCacheIdentifier("WorkPlace", "NUMBER", "WorkPlace", "ID");
 			KeyToValueEntityCacheIdentifier pkTerminalNumbersCacheIdentifier = new KeyToValueEntityCacheIdentifier("WorkPlace", "ID", "Terminal", "TERMINAL_NUMBER");
 			cacher.createCache(pkNumberCacheIdentifier);
 			cacher.createCache(numberPkCacheIdentifier);
 			cacher.createCache(pkTerminalNumbersCacheIdentifier);
-			manager = (BofPersistenceManager) BofPersistenceManagerFactory.create();
-			StringBuffer sql = new StringBuffer();
-			SqlServerUtil sqlUtil;
+
+			StringBuilder sql = new StringBuilder();
 			sql.append("SELECT w.id AS workplace_id, w.nummer AS workplace_number, t.terminal AS terminal_terminalnumber");
 			sql.append(" FROM arbetsstalle w WITH (NOLOCK) ");
 			sql.append(" LEFT JOIN terminal t WITH (NOLOCK) ON t.workplace = w.id");
 			sql.append(" ORDER BY w.id");
-			sqlUtil = new SqlServerUtil(manager, sql.toString(), new String[] { "workplace_id", "workplace_number", "terminal_terminalnumber" });
-			sqlUtil.execute();
-			HashMap<String, Object> result;
-			AbalonPrimaryKey workPlacePk = null;
+
+
+			List<WorkPlaceDAO> workPlaceDAOs  = abalonCacheTemplate.testwork(sql.toString());
+
+			Long workPlacePk = null;
 			String lastWorkPlaceNumber = null;
 			String workPlaceNumber = null;
 			String terminalNumber = null;
 			ArrayList<String> terminalNumbers = null;
-			while ((result = (HashMap) sqlUtil.next()) != null) {
-				workPlacePk = new AbalonPrimaryKey(result.get("workplace_id").toString());
-				workPlaceNumber = result.get("workplace_number").toString();
-				if (result.get("terminal_terminalnumber") != null) {
-					terminalNumber = result.get("terminal_terminalnumber").toString();
-				} else {
-					terminalNumber = null;
-				}
+
+			for (WorkPlaceDAO workPlaceDAO : workPlaceDAOs) {
+				System.out.println("ID      : " + workPlaceDAO.getWorkplace_id());
+				System.out.println("NUMMBER : " + workPlaceDAO.getWorkplace_number());
+				System.out.println("TERMINAL: " + workPlaceDAO.getTerminal_terminalnumber());
+
+				workPlacePk = workPlaceDAO.getWorkplace_id();
+				workPlaceNumber = workPlaceDAO.getWorkplace_number();
+				terminalNumber = workPlaceDAO.getTerminal_terminalnumber();
+
 				cacher.putKeyToValue(numberPkCacheIdentifier, workPlaceNumber, workPlacePk);
 				cacher.putKeyToValue(pkNumberCacheIdentifier, workPlacePk, workPlaceNumber);
 				if (terminalNumber != null && (lastWorkPlaceNumber == null || !lastWorkPlaceNumber.equals(workPlaceNumber))) {
@@ -76,24 +79,15 @@ public class WorkPlaceCacheLoader extends AbstractCacheLoader {
 					cacher.putKeyToValue(pkTerminalNumbersCacheIdentifier, workPlacePk, terminalNumber);
 				}
 			}
-			// for (WorkPlace workPlace : workPlaces) {
-			// cacher.putMapped(cacheIdentifier, workPlace.getFieldId(), workPlace.getFieldNumber());
-			// }
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (manager != null && manager.currentTransaction().isActive()) {
-				manager.currentTransaction().rollback();
-			}
-			if (manager != null) {
-				manager.close();
-				manager = null;
-			}
 		}
 
 	}
 
 	private static void addPkTerminalNumbersToCache() {
+		/*
 		String keyModelName = "WorkPlace";
 		String keyFieldName = "ID";
 		String valueModelName = "Terminal";
@@ -121,9 +115,9 @@ public class WorkPlaceCacheLoader extends AbstractCacheLoader {
 			manager = null;
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
-
+/*
 	private static void addNumberPkToCache() {
 		String keyModelName = "WorkPlace";
 		String keyFieldName = "NUMBER";
@@ -147,5 +141,5 @@ public class WorkPlaceCacheLoader extends AbstractCacheLoader {
 			e.printStackTrace();
 		}
 	}
-
+*/
 }

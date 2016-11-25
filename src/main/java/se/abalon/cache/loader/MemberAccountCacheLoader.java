@@ -6,7 +6,7 @@ import se.abalon.cache.type.AbalonPrimaryKey;
 import java.sql.SQLException;
 import java.util.HashMap;
 
-public class MemberAccountCacheLoader extends AbstractCacheLoader {
+public class MemberAccountCacheLoader {//extends AbstractCacheLoader {
 
 	private static MayflowerCacher cacher;
 
@@ -15,16 +15,16 @@ public class MemberAccountCacheLoader extends AbstractCacheLoader {
 	}
 
 	public void load() throws Exception {
-		setLoaded(false);
+	/*	setLoaded(false);
 		try {
 			addMemberAccountCaches();
 		} catch (Exception e) {
 			throw e;
 		}
 		setLoaded(true);
-
+*/
 	}
-
+/*
 	private static void addMemberAccountCaches() {
 		BofPersistenceManager manager = null;
 		try {
@@ -66,4 +66,5 @@ public class MemberAccountCacheLoader extends AbstractCacheLoader {
 		}
 		sqlUtil.close();
 	}
+	*/
 }

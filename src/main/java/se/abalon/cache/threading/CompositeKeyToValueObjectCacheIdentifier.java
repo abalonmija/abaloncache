@@ -1,7 +1,5 @@
 package se.abalon.cache.threading;
 
-import se.abalon.cache.KeyToValueObjectCacheIdentifier;
-
 /**
  *
  * A CompositeKeyToValueObjectCacheIdentifier for identifying Composite key to value caches. A Composite key to value cache contains map entries where the key is a composition of two (Composite key [firstKey__secondKey] -> value).

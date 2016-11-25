@@ -1,7 +1,5 @@
 package se.abalon.cache.threading;
 
-import se.abalon.cache.CacheIdentifier;
-
 import javax.jdo.PersistenceManager;
 
 /**

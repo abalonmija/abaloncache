@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 
 import org.apache.log4j.Category;
 import se.abalon.cache.exception.FormatException;
+import se.abalon.cache.exception.ResourceProviderException;
 import se.abalon.cache.util.StringUtil;
 
 /**

@@ -2,10 +2,10 @@ package se.abalon.cache.loader;
 
 import se.abalon.cache.threading.KeyEntityCacheIdentifier;
 
-public class CommunicationMonitorCacheLoader extends AbstractCacheLoader {
+public class CommunicationMonitorCacheLoader {//extends AbstractCacheLoader {
 
     private static MayflowerCacher cacher;
-
+/*
     public CommunicationMonitorCacheLoader() throws Exception {
         cacher = MayflowerCacher.getMayflowerCacher();
     }
@@ -50,7 +50,7 @@ public class CommunicationMonitorCacheLoader extends AbstractCacheLoader {
             e.printStackTrace();
         }
     }
-
+*/
 }
 
 

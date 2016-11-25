@@ -6,7 +6,7 @@ import se.abalon.cache.type.AbalonPrimaryKey;
 
 import java.util.HashMap;
 
-public class EmailCacheLoader extends AbstractCacheLoader {
+public class EmailCacheLoader{// extends AbstractCacheLoader {
 
 	private static MayflowerCacher cacher;
 
@@ -15,7 +15,7 @@ public class EmailCacheLoader extends AbstractCacheLoader {
 	}
 
 	public void load() throws Exception {
-		setLoaded(false);
+		/*setLoaded(false);
 		try {
 			if (((String) getConfigurations().lookup("se.abalon.mfservice.MemberUtil.useEmailAsMemberId")).equalsIgnoreCase("true")) {
 				addToCache();
@@ -24,9 +24,9 @@ public class EmailCacheLoader extends AbstractCacheLoader {
 			throw e;
 		}
 		setLoaded(true);
-
+*/
 	}
-
+/*
 	private static void addToCache() {
 		BofPersistenceManager manager = null;
 		try {
@@ -67,11 +67,6 @@ public class EmailCacheLoader extends AbstractCacheLoader {
 
 	}
 
-	/**
-	 * Resources used by this class.
-	 * 
-	 * @return The ResourceMap for this class.
-	 */
 	public static ResourceMap getConfigurations() {
 		ResourceMap map = new ResourceMap();
 
@@ -79,5 +74,5 @@ public class EmailCacheLoader extends AbstractCacheLoader {
 		return map;
 
 	}
-
+*/
 }

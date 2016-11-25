@@ -5,7 +5,7 @@ import se.abalon.cache.type.AbalonPrimaryKey;
 
 import java.util.HashMap;
 
-public class ProductGroupCacheLoader extends AbstractCacheLoader {
+public class ProductGroupCacheLoader{// extends AbstractCacheLoader {
 
 	private static MayflowerCacher cacher;
 
@@ -14,16 +14,16 @@ public class ProductGroupCacheLoader extends AbstractCacheLoader {
 	}
 
 	public void load() throws Exception {
-		setLoaded(false);
+		/*setLoaded(false);
 		try {
 			addCodePkAndPkDescToCache();
 		} catch (Exception e) {
 			throw e;
 		}
 		setLoaded(true);
-
+*/
 	}
-
+/*
 	private static void addCodePkAndPkDescToCache() {
 		BofPersistenceManager manager = null;
 		try {
@@ -76,4 +76,5 @@ public class ProductGroupCacheLoader extends AbstractCacheLoader {
 			}
 		}
 	}
+	*/
 }

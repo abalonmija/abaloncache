@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Category;
+import se.abalon.cache.exception.ResourceProviderException;
 
 /**
  * The class is used to structure arbitrary ResourceProviders in some tree

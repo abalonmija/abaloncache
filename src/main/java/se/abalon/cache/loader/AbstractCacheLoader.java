@@ -13,10 +13,10 @@ AbstractCacheLoader implements CacheLoader {
 
 	private Long timeBefore = null;
 
-	public AbstractCacheLoader() {
+/*	public AbstractCacheLoader() {
 		timeBefore = System.currentTimeMillis();
 	}
-
+*/
 	public void run() {
 		try {
 			load();
@@ -24,12 +24,12 @@ AbstractCacheLoader implements CacheLoader {
 			e.printStackTrace();
 		}
 	}
-
+/*
 	public void setLoaded(Boolean isLoaded) {
 		MainCacheLoader.setCacheLoaderStatus(getClass().getName(), isLoaded);
 		if (isLoaded) {
 			System.out.println("::MAYFLOWER CACHE:: " + getClass().getSimpleName() + " loaded in " + (System.currentTimeMillis() - timeBefore) / 1000 + " seconds");
 		}
 	}
-
+*/
 }

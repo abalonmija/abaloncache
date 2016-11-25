@@ -1,9 +1,5 @@
 package se.abalon.cache.threading;
 
-import se.abalon.cache.AbstractEntityCacheIdentifier;
-
-import javax.jdo.PersistenceManager;
-
 /**
  *
  * A KeyToValueEntityCacheIdentifier for identifying key to value caches. A key to value cache contains map entries (Key -> value).

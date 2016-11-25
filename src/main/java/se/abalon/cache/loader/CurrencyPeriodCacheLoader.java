@@ -3,7 +3,7 @@ package se.abalon.cache.loader;
 import se.abalon.cache.threading.KeyToValueEntityCacheIdentifier;
 import se.abalon.cache.type.AbalonPrimaryKey;
 
-public class CurrencyPeriodCacheLoader extends AbstractCacheLoader {
+public class CurrencyPeriodCacheLoader{// extends AbstractCacheLoader {
 
 	public static final AbalonPrimaryKey CURRENT_CURRENCY_PERIOD_KEY = new AbalonPrimaryKey(0);
 	private static MayflowerCacher cacher;
@@ -13,15 +13,15 @@ public class CurrencyPeriodCacheLoader extends AbstractCacheLoader {
 	}
 
 	public void load() throws Exception {
-		setLoaded(false);
+		/*setLoaded(false);
 		try {
 			addCurrencyPeriodCaches();
 		} catch (Exception e) {
 			throw e;
 		}
-		setLoaded(true);
+		setLoaded(true);*/
 	}
-
+/*
 	private static void addCurrencyPeriodCaches() {
 		BofPersistenceManager manager = null;
 		try {
@@ -81,4 +81,5 @@ public class CurrencyPeriodCacheLoader extends AbstractCacheLoader {
 
 		}
 	}
+	*/
 }

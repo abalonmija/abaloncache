@@ -4,7 +4,7 @@ import se.abalon.cache.threading.KeyToValueEntityCacheIdentifier;
 
 import java.util.HashMap;
 
-public class CountryCacheLoader extends AbstractCacheLoader {
+public class CountryCacheLoader{// extends AbstractCacheLoader {
 
 	private static MayflowerCacher cacher;
 
@@ -13,15 +13,16 @@ public class CountryCacheLoader extends AbstractCacheLoader {
 	}
 
 	public void load() throws Exception {
-		setLoaded(false);
+		/*setLoaded(false);
 		try {
 			addCurrencyCache();
 		} catch (Exception e) {
 			throw e;
 		}
 		setLoaded(true);
+		*/
 	}
-
+/*
 	private static void addCurrencyCache() {
 		BofPersistenceManager manager = null;
 		try {
@@ -57,4 +58,5 @@ public class CountryCacheLoader extends AbstractCacheLoader {
 		}
 
 	}
+	*/
 }

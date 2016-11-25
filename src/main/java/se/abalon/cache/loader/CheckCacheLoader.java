@@ -11,8 +11,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-public class CheckCacheLoader extends AbstractCacheLoader {
-
+public class CheckCacheLoader{//} extends AbstractCacheLoader {
+/*
 	private static MayflowerCacher cacher;
 	private static KeyToValueEntityCacheIdentifier checkAccountCheckBarCodeModelIdentifier = new KeyToValueEntityCacheIdentifier("Check", "ACCOUNT", "Check", "BAR_CODE");
 
@@ -219,5 +219,5 @@ public class CheckCacheLoader extends AbstractCacheLoader {
 		cacher.createCache(checkAccountCheckBarCodeModelIdentifier);
 
 	}
-
+*/
 }

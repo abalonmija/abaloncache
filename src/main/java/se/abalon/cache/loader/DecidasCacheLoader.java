@@ -3,7 +3,7 @@ package se.abalon.cache.loader;
 import se.abalon.cache.threading.KeyObjectCacheIdentifier;
 import se.abalon.cache.threading.KeyToValueObjectCacheIdentifier;
 
-public class DecidasCacheLoader extends AbstractCacheLoader {
+public class DecidasCacheLoader{// extends AbstractCacheLoader {
 
 	private static MayflowerCacher cacher;
 
@@ -12,16 +12,16 @@ public class DecidasCacheLoader extends AbstractCacheLoader {
 	}
 
 	public void load() throws Exception {
-		setLoaded(false);
+		/*setLoaded(false);
 		try {
 			createEmptyDecidasPersonCaches();
 		} catch (Exception e) {
 			throw e;
 		}
 		setLoaded(true);
-
+*/
 	}
-
+/*
 	private static void createEmptyDecidasPersonCaches() {
 		try {
 			KeyToValueObjectCacheIdentifier cacheIdentifier = new KeyToValueObjectCacheIdentifier("Decidas_PersonSearch", "ORGNBR", "DecidasPerson");
@@ -39,4 +39,5 @@ public class DecidasCacheLoader extends AbstractCacheLoader {
 			e.printStackTrace();
 		}
 	}
+	*/
 }

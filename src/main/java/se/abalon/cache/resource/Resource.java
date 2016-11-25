@@ -1,5 +1,7 @@
 package se.abalon.cache.resource;
 
+import se.abalon.cache.exception.ResourceProviderException;
+
 /**
  * A definition of a resource as well as the object to do "lookup" upon to do the
  * actual fetching of the values of the resource.

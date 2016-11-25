@@ -2,7 +2,7 @@ package se.abalon.cache.loader;
 
 import se.abalon.cache.threading.KeyToValueObjectCacheIdentifier;
 
-public class PARB2CCacheLoader extends AbstractCacheLoader {
+public class PARB2CCacheLoader {//extends AbstractCacheLoader {
 
 	private static MayflowerCacher cacher;
 
@@ -11,14 +11,14 @@ public class PARB2CCacheLoader extends AbstractCacheLoader {
 	}
 
 	public void load() throws Exception {
-		setLoaded(false);
+		/*setLoaded(false);
 		try {
 			createEmptyPARB2CDownloadedCache();
 		} catch (Exception e) {
 			throw e;
 		}
 		setLoaded(true);
-
+*/
 	}
 
 	private static void createEmptyPARB2CDownloadedCache() {

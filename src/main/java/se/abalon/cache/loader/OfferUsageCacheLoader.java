@@ -8,7 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class OfferUsageCacheLoader extends AbstractCacheLoader {
+public class OfferUsageCacheLoader{// extends AbstractCacheLoader {
 
     private static MayflowerCacher cacher;
     private static CompositeKeyToValueObjectCacheIdentifier offerUsageAndAccountIdCacheIdentifier = new CompositeKeyToValueObjectCacheIdentifier("OfferUsage", "OFFER", "ACCOUNT", "ID");
@@ -19,7 +19,7 @@ public class OfferUsageCacheLoader extends AbstractCacheLoader {
     }
 
     public void load() throws Exception {
-        setLoaded(false);
+        /*setLoaded(false);
         try {
             BofPersistenceManager manager = null;
             try {
@@ -38,9 +38,9 @@ public class OfferUsageCacheLoader extends AbstractCacheLoader {
             }
         } catch (Exception e) {
             throw e;
-        }
+        }*/
     }
-
+/*
     private void loadOfferUsagesCache(BofPersistenceManager manager) {
         try {
 
@@ -113,8 +113,9 @@ public class OfferUsageCacheLoader extends AbstractCacheLoader {
             cacher.putCompositeKeyToValue(offerUsageAndAccountIdCacheIdentifier, offerPk, accountPk, Integer.valueOf(offerUsage.getFieldId().toString()));
         }
     }
-
+*/
     private static void createCaches() {
         cacher.createCache(offerUsageAndAccountIdCacheIdentifier);
     }
+
 }

@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Set;
 
-public class OfferValidityCacheLoader extends AbstractCacheLoader {
+public class OfferValidityCacheLoader {//extends AbstractCacheLoader {
 
     private static MayflowerCacher cacher;
     private static CompositeKeyToValueObjectCacheIdentifier offerValidityCacheIdentifier = new CompositeKeyToValueObjectCacheIdentifier("OfferValidity", "OFFER", "MEMBER_ACCOUNT", "ID");
@@ -25,7 +25,7 @@ public class OfferValidityCacheLoader extends AbstractCacheLoader {
     }
 
     public void load() throws Exception {
-        setLoaded(false);
+      /*  setLoaded(false);
         try {
             BofPersistenceManager manager = null;
             try {
@@ -45,9 +45,9 @@ public class OfferValidityCacheLoader extends AbstractCacheLoader {
             }
         } catch (Exception e) {
             throw e;
-        }
+        }*/
     }
-
+/*
     private void addOfferValiditiesToCache(BofPersistenceManager manager, Integer offerConditionPk) throws SQLException, ModelException, ParseException {
         SqlServerUtil sqlUtil = buildAndExecuteOfferValiditysQuerySql(manager, offerConditionPk);
         HashMap<String, Object> result = null;
@@ -93,4 +93,5 @@ public class OfferValidityCacheLoader extends AbstractCacheLoader {
             }
         }
     }
+    */
 }
